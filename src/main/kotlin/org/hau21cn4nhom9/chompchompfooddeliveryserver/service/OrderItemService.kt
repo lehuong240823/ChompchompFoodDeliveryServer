@@ -32,7 +32,7 @@ class OrderItemService(private val orderItemRepository: OrderItemRepository) {
     @Transactional
     fun deleteOrderItem(id: Int) = orderItemRepository.deleteById(id)
 
-    fun findOrderItemsByOrderId(pageable: Pageable, id: Int): Page<OrderItem> = orderItemRepository.findOrderItemsByOrder_Id(pageable, id)
+    fun findOrderItemsByOrderId(pageable: Pageable, id: Int): Page<OrderItem> = orderItemRepository.findOrderItemsByOrder(pageable, id)
 
     fun findOrderItemsByFoodItemId(pageable: Pageable, id: Int): Page<OrderItem> = orderItemRepository.findOrderItemsByFoodItem_Id(pageable, id)
 

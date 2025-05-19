@@ -10,7 +10,7 @@ interface OrderItemRepository: JpaRepository<OrderItem, Int> {
 
     override fun findAll(pageable: Pageable): Page<OrderItem>
 
-    fun findOrderItemsByOrder_Id(pageable: Pageable, id: Int): Page<OrderItem>
+    fun findOrderItemsByOrder(pageable: Pageable, id: Int): Page<OrderItem>
 
     fun findOrderItemsByFoodItem_Id(pageable: Pageable, id: Int): Page<OrderItem>
 
