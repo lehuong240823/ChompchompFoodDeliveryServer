@@ -22,20 +22,20 @@ class AccessLevelController(private val accessLevelService: AccessLevelService) 
         return if (accessLevel != null) ResponseEntity.ok(accessLevel) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createAccessLevel(@RequestBody accessLevel: AccessLevel): AccessLevel = accessLevelService.saveAccessLevel(accessLevel)
-
-    @PutMapping("/{id}")
-    fun updateAccessLevel(@PathVariable id: Byte, @RequestBody updatedAccessLevel: AccessLevel): ResponseEntity<AccessLevel> {
-        val accessLevel = accessLevelService.updateAccessLevel(id, updatedAccessLevel)
-        return if (accessLevel != null) ResponseEntity.ok(accessLevel) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteAccessLevel(@PathVariable id: Byte): ResponseEntity<Void> {
-        accessLevelService.deleteAccessLevel(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createAccessLevel(@RequestBody accessLevel: AccessLevel): AccessLevel = accessLevelService.saveAccessLevel(accessLevel)
+//
+//    @PutMapping("/{id}")
+//    fun updateAccessLevel(@PathVariable id: Byte, @RequestBody updatedAccessLevel: AccessLevel): ResponseEntity<AccessLevel> {
+//        val accessLevel = accessLevelService.updateAccessLevel(id, updatedAccessLevel)
+//        return if (accessLevel != null) ResponseEntity.ok(accessLevel) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteAccessLevel(@PathVariable id: Byte): ResponseEntity<Void> {
+//        accessLevelService.deleteAccessLevel(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

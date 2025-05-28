@@ -22,20 +22,20 @@ class AccountStatusController(private val accountStatusService: AccountStatusSer
         return if (accountStatus != null) ResponseEntity.ok(accountStatus) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createAccountStatus(@RequestBody accountStatus: AccountStatus): AccountStatus = accountStatusService.saveAccountStatus(accountStatus)
-
-    @PutMapping("/{id}")
-    fun updateAccountStatus(@PathVariable id: Byte, @RequestBody updatedAccountStatus: AccountStatus): ResponseEntity<AccountStatus> {
-        val accountStatus = accountStatusService.updateAccountStatus(id, updatedAccountStatus)
-        return if (accountStatus != null) ResponseEntity.ok(accountStatus) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteAccountStatus(@PathVariable id: Byte): ResponseEntity<Void> {
-        accountStatusService.deleteAccountStatus(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createAccountStatus(@RequestBody accountStatus: AccountStatus): AccountStatus = accountStatusService.saveAccountStatus(accountStatus)
+//
+//    @PutMapping("/{id}")
+//    fun updateAccountStatus(@PathVariable id: Byte, @RequestBody updatedAccountStatus: AccountStatus): ResponseEntity<AccountStatus> {
+//        val accountStatus = accountStatusService.updateAccountStatus(id, updatedAccountStatus)
+//        return if (accountStatus != null) ResponseEntity.ok(accountStatus) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteAccountStatus(@PathVariable id: Byte): ResponseEntity<Void> {
+//        accountStatusService.deleteAccountStatus(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

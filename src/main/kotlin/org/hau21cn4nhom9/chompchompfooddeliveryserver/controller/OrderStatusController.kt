@@ -22,20 +22,20 @@ class OrderStatusController(private val orderStatusService: OrderStatusService) 
         return if (orderStatus != null) ResponseEntity.ok(orderStatus) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createOrderStatus(@RequestBody orderStatus: OrderStatus): OrderStatus = orderStatusService.saveOrderStatus(orderStatus)
-
-    @PutMapping("/{id}")
-    fun updateOrderStatus(@PathVariable id: Byte, @RequestBody updatedOrderStatus: OrderStatus): ResponseEntity<OrderStatus> {
-        val orderStatus = orderStatusService.updateOrderStatus(id, updatedOrderStatus)
-        return if (orderStatus != null) ResponseEntity.ok(orderStatus) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteOrderStatus(@PathVariable id: Byte): ResponseEntity<Void> {
-        orderStatusService.deleteOrderStatus(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createOrderStatus(@RequestBody orderStatus: OrderStatus): OrderStatus = orderStatusService.saveOrderStatus(orderStatus)
+//
+//    @PutMapping("/{id}")
+//    fun updateOrderStatus(@PathVariable id: Byte, @RequestBody updatedOrderStatus: OrderStatus): ResponseEntity<OrderStatus> {
+//        val orderStatus = orderStatusService.updateOrderStatus(id, updatedOrderStatus)
+//        return if (orderStatus != null) ResponseEntity.ok(orderStatus) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteOrderStatus(@PathVariable id: Byte): ResponseEntity<Void> {
+//        orderStatusService.deleteOrderStatus(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

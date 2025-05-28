@@ -22,20 +22,20 @@ class VoucherTypeController(private val voucherTypeService: VoucherTypeService) 
         return if (voucherType != null) ResponseEntity.ok(voucherType) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createVoucherType(@RequestBody voucherType: VoucherType): VoucherType = voucherTypeService.saveVoucherType(voucherType)
-
-    @PutMapping("/{id}")
-    fun updateVoucherType(@PathVariable id: Byte, @RequestBody updatedVoucherType: VoucherType): ResponseEntity<VoucherType> {
-        val voucherType = voucherTypeService.updateVoucherType(id, updatedVoucherType)
-        return if (voucherType != null) ResponseEntity.ok(voucherType) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteVoucherType(@PathVariable id: Byte): ResponseEntity<Void> {
-        voucherTypeService.deleteVoucherType(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createVoucherType(@RequestBody voucherType: VoucherType): VoucherType = voucherTypeService.saveVoucherType(voucherType)
+//
+//    @PutMapping("/{id}")
+//    fun updateVoucherType(@PathVariable id: Byte, @RequestBody updatedVoucherType: VoucherType): ResponseEntity<VoucherType> {
+//        val voucherType = voucherTypeService.updateVoucherType(id, updatedVoucherType)
+//        return if (voucherType != null) ResponseEntity.ok(voucherType) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteVoucherType(@PathVariable id: Byte): ResponseEntity<Void> {
+//        voucherTypeService.deleteVoucherType(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

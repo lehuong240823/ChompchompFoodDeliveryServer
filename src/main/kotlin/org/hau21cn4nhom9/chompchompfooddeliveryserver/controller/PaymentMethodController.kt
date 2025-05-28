@@ -22,20 +22,20 @@ class PaymentMethodController(private val paymentMethodService: PaymentMethodSer
         return if (paymentMethod != null) ResponseEntity.ok(paymentMethod) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createPaymentMethod(@RequestBody paymentMethod: PaymentMethod): PaymentMethod = paymentMethodService.savePaymentMethod(paymentMethod)
-
-    @PutMapping("/{id}")
-    fun updatePaymentMethod(@PathVariable id: Byte, @RequestBody updatedPaymentMethod: PaymentMethod): ResponseEntity<PaymentMethod> {
-        val paymentMethod = paymentMethodService.updatePaymentMethod(id, updatedPaymentMethod)
-        return if (paymentMethod != null) ResponseEntity.ok(paymentMethod) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deletePaymentMethod(@PathVariable id: Byte): ResponseEntity<Void> {
-        paymentMethodService.deletePaymentMethod(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createPaymentMethod(@RequestBody paymentMethod: PaymentMethod): PaymentMethod = paymentMethodService.savePaymentMethod(paymentMethod)
+//
+//    @PutMapping("/{id}")
+//    fun updatePaymentMethod(@PathVariable id: Byte, @RequestBody updatedPaymentMethod: PaymentMethod): ResponseEntity<PaymentMethod> {
+//        val paymentMethod = paymentMethodService.updatePaymentMethod(id, updatedPaymentMethod)
+//        return if (paymentMethod != null) ResponseEntity.ok(paymentMethod) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deletePaymentMethod(@PathVariable id: Byte): ResponseEntity<Void> {
+//        paymentMethodService.deletePaymentMethod(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

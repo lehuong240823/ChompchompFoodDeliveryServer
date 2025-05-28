@@ -22,20 +22,20 @@ class AccountRoleController(private val accountRoleService: AccountRoleService) 
         return if (accountRole != null) ResponseEntity.ok(accountRole) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createAccountRole(@RequestBody accountRole: AccountRole): AccountRole = accountRoleService.saveAccountRole(accountRole)
-
-    @PutMapping("/{id}")
-    fun updateAccountRole(@PathVariable id: Byte, @RequestBody updatedAccountRole: AccountRole): ResponseEntity<AccountRole> {
-        val accountRole = accountRoleService.updateAccountRole(id, updatedAccountRole)
-        return if (accountRole != null) ResponseEntity.ok(accountRole) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteAccountRole(@PathVariable id: Byte): ResponseEntity<Void> {
-        accountRoleService.deleteAccountRole(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createAccountRole(@RequestBody accountRole: AccountRole): AccountRole = accountRoleService.saveAccountRole(accountRole)
+//
+//    @PutMapping("/{id}")
+//    fun updateAccountRole(@PathVariable id: Byte, @RequestBody updatedAccountRole: AccountRole): ResponseEntity<AccountRole> {
+//        val accountRole = accountRoleService.updateAccountRole(id, updatedAccountRole)
+//        return if (accountRole != null) ResponseEntity.ok(accountRole) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteAccountRole(@PathVariable id: Byte): ResponseEntity<Void> {
+//        accountRoleService.deleteAccountRole(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 

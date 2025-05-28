@@ -22,20 +22,20 @@ class FoodItemStatusController(private val foodItemStatusService: FoodItemStatus
         return if (foodItemStatus != null) ResponseEntity.ok(foodItemStatus) else ResponseEntity.notFound().build()
     }
 
-    @PostMapping
-    fun createFoodItemStatus(@RequestBody foodItemStatus: FoodItemStatus): FoodItemStatus = foodItemStatusService.saveFoodItemStatus(foodItemStatus)
-
-    @PutMapping("/{id}")
-    fun updateFoodItemStatus(@PathVariable id: Byte, @RequestBody updatedFoodItemStatus: FoodItemStatus): ResponseEntity<FoodItemStatus> {
-        val foodItemStatus = foodItemStatusService.updateFoodItemStatus(id, updatedFoodItemStatus)
-        return if (foodItemStatus != null) ResponseEntity.ok(foodItemStatus) else ResponseEntity.notFound().build()
-    }
-
-    @DeleteMapping("/{id}")
-    fun deleteFoodItemStatus(@PathVariable id: Byte): ResponseEntity<Void> {
-        foodItemStatusService.deleteFoodItemStatus(id)
-        return ResponseEntity.noContent().build()
-    }
+//    @PostMapping
+//    fun createFoodItemStatus(@RequestBody foodItemStatus: FoodItemStatus): FoodItemStatus = foodItemStatusService.saveFoodItemStatus(foodItemStatus)
+//
+//    @PutMapping("/{id}")
+//    fun updateFoodItemStatus(@PathVariable id: Byte, @RequestBody updatedFoodItemStatus: FoodItemStatus): ResponseEntity<FoodItemStatus> {
+//        val foodItemStatus = foodItemStatusService.updateFoodItemStatus(id, updatedFoodItemStatus)
+//        return if (foodItemStatus != null) ResponseEntity.ok(foodItemStatus) else ResponseEntity.notFound().build()
+//    }
+//
+//    @DeleteMapping("/{id}")
+//    fun deleteFoodItemStatus(@PathVariable id: Byte): ResponseEntity<Void> {
+//        foodItemStatusService.deleteFoodItemStatus(id)
+//        return ResponseEntity.noContent().build()
+//    }
 
     // code block here
 
