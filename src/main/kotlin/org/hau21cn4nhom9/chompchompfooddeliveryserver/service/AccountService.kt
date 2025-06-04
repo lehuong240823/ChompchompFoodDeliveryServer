@@ -39,4 +39,6 @@ class AccountService(private val accountRepository: AccountRepository) {
     // code block here
 
     // @gen-end
+
+    fun findAccountByEmail(email: String): Account? = accountRepository.findAccountByEmail(email).orElse(null)
 }

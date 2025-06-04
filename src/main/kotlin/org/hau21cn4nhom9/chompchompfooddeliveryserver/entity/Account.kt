@@ -10,7 +10,8 @@ import java.time.Instant
         Index(name = "account_role_id", columnList = "account_role_id"),
         Index(name = "account_status_id", columnList = "account_status_id")
     ], uniqueConstraints = [
-        UniqueConstraint(name = "username", columnNames = ["username"])
+        UniqueConstraint(name = "username", columnNames = ["username"]),
+        UniqueConstraint(name = "email", columnNames = ["email"])
     ]
 )
 class Account {

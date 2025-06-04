@@ -46,4 +46,10 @@ class AccountController(private val accountService: AccountService) {
     // code block here
 
     // @gen-end
+
+    @GetMapping("/email/{email}")
+    fun findAccountByEmail(@PathVariable email: String): ResponseEntity<Account> {
+        val account = accountService.findAccountByEmail(email)
+        return if (account != null) ResponseEntity.ok(account) else ResponseEntity.notFound().build()
+    }
 }
