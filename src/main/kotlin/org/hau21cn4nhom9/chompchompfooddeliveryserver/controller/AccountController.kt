@@ -5,6 +5,7 @@ import org.hau21cn4nhom9.chompchompfooddeliveryserver.service.AccountService
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
 import org.springframework.data.web.PageableDefault
+import org.springframework.http.HttpStatusCode
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -23,7 +24,14 @@ class AccountController(private val accountService: AccountService) {
     }
 
     @PostMapping
-    fun createAccount(@RequestBody account: Account): Account = accountService.saveAccount(account)
+    fun createAccount(@RequestBody account: Account): ResponseEntity<Account> {
+        account.email?.let {
+            if(accountService.findAccountByEmail(it) == null ) {
+                return ResponseEntity.ok(accountService.saveAccount(account))
+            }
+        }
+        return ResponseEntity.status(409).build()
+    }
 
     @PutMapping("/{id}")
     fun updateAccount(@PathVariable id: Int, @RequestBody updatedAccount: Account): ResponseEntity<Account> {
